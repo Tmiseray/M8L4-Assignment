@@ -1,0 +1,170 @@
+/* Genos - Main Content */
+@import url('https://fonts.googleapis.com/css2?family=Genos:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* Unbounded - Side Bar */
+@import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@200..900&display=swap');
+
+/* Poppins - Footer */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* Arsenal SC - Header */
+@import url('https://fonts.googleapis.com/css2?family=Arsenal+SC:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+body {
+    background-color: darkslategray;
+}
+
+.grid-container {
+    display: grid;
+    width: 88%;
+    height: auto;
+    grid-template-rows: repeat(6, 1fr);
+    grid-template-columns: repeat(3, 35%);
+    gap: 20px;
+    padding: 15px;
+}
+
+header {
+    font-family: 'Arsenal SC';
+    font-size: 24px;
+    color: midnightblue;
+    background-color: lightsteelblue;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    border-radius: 15px;
+    text-align: center;
+    padding: 15px;
+}
+
+h1 {
+    text-shadow: 3px 3px 4px rgba(128, 128, 128, 0.8);
+}
+
+.side-bar {
+    font-family: 'Unbounded';
+    font-size: 14px;
+    color: rgb(66, 66, 66);
+    background-color: lightblue;
+    grid-column-start: 1;
+    grid-row-start: 2;
+    grid-row-end: 6;
+    border-radius: 55px;
+    padding: 30px;
+    box-shadow: 0px 0px 20px 11px rgba(255, 255, 255, 0.788);
+}
+
+.background-fade {
+    font-family: 'Genos';
+    font-size: 20px;
+    background-color: rgba(135, 206, 250, 0.25);
+    grid-column-start: 2;
+    grid-column-end: 4;
+    grid-row-start: 2;
+    grid-row-end: 6;
+    border-radius: 55px;
+    padding: 30px;
+    box-shadow: 0px 0px 20px 11px rgba(255, 255, 255, 0.788);
+}
+
+footer {
+    font-family: 'Poppins';
+    font-size: 22px;
+    background-color: lightslategray;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 6;
+    border-radius: 15px;
+    text-align: center;
+    padding: 15px;
+}
+
+button {
+    font-size: 20px;
+    padding: 2px;
+    background-color: rgba(166, 186, 213, 1);
+    text-align: center;
+    cursor: pointer;
+    border-radius: 5px;
+    border: 3px outset #ddd;
+    box-shadow: 2px 2px 2px 2px rgba(50, 50, 50, 0.4);
+    transition: transform 0.5s ease, box-shadow 0.5s ease-in-out;
+}
+
+button:hover, button a:hover {
+    background-color: rgba(78, 7, 7, 1);
+    color: whitesmoke;
+    font-weight: bold;
+    transition: background-color 0.5s ease-in-out;
+    transform: scale(1.05);
+    box-shadow: 8px 8px 8px 4px rgba(50, 50, 50, 0.6);
+}
+
+button:active, button a:active{
+    background-color: rgba(78, 7, 7, 1);
+    color: whitesmoke;
+    border: 4px inset #ddd;
+    animation: 1s infinite alternate enhanceButton, 1s infinite alternate shadowEffect;
+}
+
+img.animation {
+    width: 150px;
+    height: 120px;
+    border-radius: 50%;
+    /* border: 1px solid #ddd;
+    box-shadow: 2px 2px 2px 2px rgba(255, 255, 255, 0.788); */
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    float: left;
+    animation: rotate 10s infinite linear;
+}
+
+
+
+@keyframes enhanceButton {
+    from { transform: scale(0.9); }
+    to { transform: scale(1.1); }
+}
+
+@keyframes shadowEffect {
+    from { box-shadow: 1px 1px 5px #ddd; }
+    to { box-shadow: 2px 2px 10px #ddd; }
+}
+
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+
+
+
+@media screen and (max-width: 768px) {
+    .grid-container {
+        grid-template-rows: repeat(7, 1fr);
+        grid-template-columns: 1fr;
+        gap: 11px;
+        padding: 5px;
+        padding-right: 10px;
+    }
+
+    .side-bar {
+        grid-row-end: 4;
+        grid-column-end: end;
+        box-shadow: 0px 0px 20px 5px rgba(255, 255, 255, 0.788);
+    }
+
+    .background-fade {
+        grid-row-start: 4;
+        grid-row-end: 7;
+        grid-column-start: 1;
+        box-shadow: 0px 0px 20px 5px rgba(255, 255, 255, 0.788);
+    }
+
+    footer {
+        grid-row-start: 7;
+    }
+}
